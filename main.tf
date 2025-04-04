@@ -80,12 +80,12 @@ resource "azurerm_storage_account" "storage" {
 resource "azurerm_role_assignment" "sql_role" {
   scope                = azurerm_mssql_server.sql_server.id
   role_definition_name = "Contributor"
-  principal_id         = azuread_group.devops_team.id
+  principal_id         = azuread_group.devops_team.object_id
 }
 
 # Role assignment: Storage Blob Data Contributor on Storage Account
 resource "azurerm_role_assignment" "storage_role" {
   scope                = azurerm_storage_account.storage.id
   role_definition_name = "Storage Blob Data Contributor"
-  principal_id         = azuread_group.devops_team.id
+  principal_id         = azuread_group.devops_team.object_id
 }
