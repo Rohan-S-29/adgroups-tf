@@ -13,7 +13,7 @@ resource "azurerm_resource_group" "rg" {
 
 # Create Azure AD Users
 resource "azuread_user" "owner" {
-  user_principal_name    = "user1@example.com"
+  user_principal_name    = "owneruser1@.rohanorg.OnMicrosoft.com"
   display_name           = "User One"
   mail_nickname          = "user1"
   password               = "StrongPassword@123"
@@ -21,7 +21,7 @@ resource "azuread_user" "owner" {
 }
 
 resource "azuread_user" "member2" {
-  user_principal_name    = "user2@example.com"
+  user_principal_name    = "user2@rohanorg.OnMicrosoft.com"
   display_name           = "User Two"
   mail_nickname          = "user2"
   password               = "StrongPassword@123"
@@ -29,7 +29,7 @@ resource "azuread_user" "member2" {
 }
 
 resource "azuread_user" "member3" {
-  user_principal_name    = "user3@example.com"
+  user_principal_name    = "user3@rohanorg.OnMicrosoft.com"
   display_name           = "User Three"
   mail_nickname          = "user3"
   password               = "StrongPassword@123"
@@ -37,7 +37,7 @@ resource "azuread_user" "member3" {
 }
 
 resource "azuread_user" "member4" {
-  user_principal_name    = "user4@example.com"
+  user_principal_name    = "user4@rohanorg.OnMicrosoft.com"
   display_name           = "User Four"
   mail_nickname          = "user4"
   password               = "StrongPassword@123"
@@ -59,7 +59,7 @@ resource "azuread_group" "devops_team" {
 
 # Azure SQL Server
 resource "azurerm_mssql_server" "sql_server" {
-  name                         = "my-sql-server-123"
+  name                         = "server-rohan-9876"
   resource_group_name          = azurerm_resource_group.rg.name
   location                     = azurerm_resource_group.rg.location
   version                      = "12.0"
@@ -69,7 +69,7 @@ resource "azurerm_mssql_server" "sql_server" {
 
 # Azure Storage Account
 resource "azurerm_storage_account" "storage" {
-  name                     = "mystorageaccount123"
+  name                     = "stg-account-rohan-9876"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
