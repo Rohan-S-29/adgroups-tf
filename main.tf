@@ -2,6 +2,7 @@ provider "azuread" {}
 
 provider "azurerm" {
   features {}
+  subscription_id = "d8d6ad8c-f635-407e-81b9-4ce76f2d5a10"
 }
 
 # Lookup users by email to get UUIDs
