@@ -13,7 +13,7 @@ resource "azurerm_resource_group" "rg" {
 
 # Create Azure AD Users
 resource "azuread_user" "owner" {
-  user_principal_name    = "owneruser1@rohanorg.onmicrosoft.com"
+  user_principal_name    = "owneruser1@turfofficial257gmail.onmicrosoft.com"
   display_name           = "User One"
   mail_nickname          = "user1"
   password               = "StrongPassword@123"
@@ -21,7 +21,7 @@ resource "azuread_user" "owner" {
 }
 
 resource "azuread_user" "member2" {
-  user_principal_name    = "user2@rohanorg.onmicrosoft.com"
+  user_principal_name    = "user2@turfofficial257gmail.onmicrosoft.com"
   display_name           = "User Two"
   mail_nickname          = "user2"
   password               = "StrongPassword@123"
@@ -29,7 +29,7 @@ resource "azuread_user" "member2" {
 }
 
 resource "azuread_user" "member3" {
-  user_principal_name    = "user3@rohanorg.onmicrosoft.com"
+  user_principal_name    = "user3@turfofficial257gmail.onmicrosoft.com"
   display_name           = "User Three"
   mail_nickname          = "user3"
   password               = "StrongPassword@123"
@@ -37,7 +37,7 @@ resource "azuread_user" "member3" {
 }
 
 resource "azuread_user" "member4" {
-  user_principal_name    = "user4@rohanorg.onmicrosoft.com"
+  user_principal_name    = "user4@turfofficial257gmail.onmicrosoft.com"
   display_name           = "User Four"
   mail_nickname          = "user4"
   password               = "StrongPassword@123"
