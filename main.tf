@@ -5,21 +5,37 @@ provider "azurerm" {
   subscription_id = "d8d6ad8c-f635-407e-81b9-4ce76f2d5a10"
 }
 
-# Lookup users by email to get UUIDs
-data "azuread_user" "owner" {
-  user_principal_name = "user1@example.com"
+# Create Azure AD Users
+resource "azuread_user" "owner" {
+  user_principal_name    = "user1@example.com"
+  display_name           = "User One"
+  mail_nickname          = "user1"
+  password               = "StrongPassword@123"
+  force_password_change  = false
 }
 
-data "azuread_user" "member2" {
-  user_principal_name = "user2@example.com"
+resource "azuread_user" "member2" {
+  user_principal_name    = "user2@example.com"
+  display_name           = "User Two"
+  mail_nickname          = "user2"
+  password               = "StrongPassword@123"
+  force_password_change  = false
 }
 
-data "azuread_user" "member3" {
-  user_principal_name = "user3@example.com"
+resource "azuread_user" "member3" {
+  user_principal_name    = "user3@example.com"
+  display_name           = "User Three"
+  mail_nickname          = "user3"
+  password               = "StrongPassword@123"
+  force_password_change  = false
 }
 
-data "azuread_user" "member4" {
-  user_principal_name = "user4@example.com"
+resource "azuread_user" "member4" {
+  user_principal_name    = "user4@example.com"
+  display_name           = "User Four"
+  mail_nickname          = "user4"
+  password               = "StrongPassword@123"
+  force_password_change  = false
 }
 
 # Azure AD Group
@@ -27,11 +43,11 @@ resource "azuread_group" "devops_team" {
   display_name     = "DevOps Team"
   security_enabled = true
 
-  owners  = [data.azuread_user.owner.id]
+  owners  = [azuread_user.owner.object_id]
   members = [
-    data.azuread_user.member2.id,
-    data.azuread_user.member3.id,
-    data.azuread_user.member4.id
+    azuread_user.member2.object_id,
+    azuread_user.member3.object_id,
+    azuread_user.member4.object_id
   ]
 }
 
