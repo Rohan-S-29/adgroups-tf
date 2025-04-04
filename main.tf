@@ -13,7 +13,7 @@ resource "azurerm_resource_group" "rg" {
 
 # Create Azure AD Users
 resource "azuread_user" "owner" {
-  user_principal_name    = "owneruser1@.rohanorg.OnMicrosoft.com"
+  user_principal_name    = "owneruser1@rohanorg.OnMicrosoft.com"
   display_name           = "User One"
   mail_nickname          = "user1"
   password               = "StrongPassword@123"
@@ -69,7 +69,7 @@ resource "azurerm_mssql_server" "sql_server" {
 
 # Azure Storage Account
 resource "azurerm_storage_account" "storage" {
-  name                     = "stg-account-rohan-9876"
+  name                     = "stgaccrohan9876"
   resource_group_name      = azurerm_resource_group.rg.name
   location                 = azurerm_resource_group.rg.location
   account_tier             = "Standard"
